@@ -2,11 +2,14 @@
 <Export generator="Cache" version="25">
   <Document name="shvarov-persistent.ZPM">
     <Module>
+    <Description>Persistent storage module to add 2 TS properties: CreatedAt and LastUpdatedAt</Description>
+      <Author>Shvarov</Author>
       <Name>shvarov-persistent</Name>
       <Version>1.0.0</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="shvarov.persistent.PKG"/>
+      <UnitTest Name="/src" Package="unittests.shvarov.persistent" Phase="test"/>
     </Module>
   </Document>
 </Export>

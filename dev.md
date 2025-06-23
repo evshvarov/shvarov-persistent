@@ -105,3 +105,8 @@ USER ${ISC_PACKAGE_MGRUSER}
 
 ## Python virtual environment
 python -m vevn .venv
+
+
+
+w $SYSTEM.SQL.Functions.DATEDIFF("second",tExpected,$ZDT($H),3)
+w $SYSTEM.SQL.Functions.DATEDIFF("second",tExpected,tResults.LastUpdate)

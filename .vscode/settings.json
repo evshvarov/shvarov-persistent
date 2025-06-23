@@ -12,7 +12,10 @@
         "service": "iris",
         "internalPort": 52773
       },
-      "active": true
+      "active": true,
+      "links": {
+        "Unit Tests Portal": "${serverUrl}/csp/sys/%25UnitTest.Portal.Home.cls?$NAMESPACE=USER"
+      }
     },
     "sqltools.connections": [
       {

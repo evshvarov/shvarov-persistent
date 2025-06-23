@@ -6,7 +6,7 @@ Class shvarov.persistent.base Extends %Persistent
 /// It is not intended to be instantiated directly.
 /// Instead, it should be extended by other classes that require persistence.
 /// A property that will always content time the instance was created.
-Property CreatedAt As %TimeStamp [ InitialExpression = {$ZDT($ZDS, 3)}, ReadOnly ];
+Property CreatedAt As %TimeStamp [ InitialExpression = {$ZDT($H, 3)} ];
 
 /// A property that will always content time the instance was last updated.
 Property LastUpdate As %TimeStamp [ SqlComputeCode = {set {*}=$ZDATETIME($HOROLOG,3)}, SqlComputed, SqlComputeOnChange = (%%INSERT, %%UPDATE) ];
