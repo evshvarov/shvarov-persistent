@@ -1,4 +1,4 @@
-# shvarov-persistent-base
+# shvarov-persistent
 This is a base class that brings two TS properties added to your persistent class, providing time stamps on when it the instance was created and every time it was updated:
 ```ObjectScript
 Property CreatedAt: %TimeStamp;
@@ -60,6 +60,10 @@ $ docker-compose build
 $ docker-compose up -d
 ```
 
+## unit testing
+to run unit-tests execute:
+
+USER>zpm "shvarov-persistent"
 
 # support 
 
