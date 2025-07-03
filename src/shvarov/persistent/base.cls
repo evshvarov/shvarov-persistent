@@ -11,6 +11,8 @@ Property CreatedAt As %TimeStamp [ InitialExpression = {$ZDT($H, 3)} ];
 /// A property that will always content time the instance was last updated.
 Property LastUpdate As %TimeStamp [ SqlComputeCode = {set {*}=$ZDATETIME($HOROLOG,3)}, SqlComputed, SqlComputeOnChange = (%%INSERT, %%UPDATE) ];
 
+Property LastUser As %String [ SqlComputeCode = {set {*}=$Username}, SqlComputed, SqlComputeOnChange = (%%INSERT, %%UPDATE) ];
+
 Storage Default
 {
 <Data name="baseDefaultData">
@@ -25,6 +27,9 @@ Storage Default
 </Value>
 <Value name="4">
 <Value>LastUpdate</Value>
+</Value>
+<Value name="5">
+<Value>LastUser</Value>
 </Value>
 </Data>
 <DataLocation>^shvarov.persistent.baseD</DataLocation>

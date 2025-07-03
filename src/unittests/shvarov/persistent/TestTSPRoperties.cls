@@ -24,4 +24,13 @@ Method TestLastUpdateAfterUpdate()
 	Do $$$AssertTrue(($SYSTEM.SQL.Functions.DATEDIFF("second",tCreatedAt,tResults.LastUpdate)>0),"LastUpdate is sooner than expected: It was created at "_tCreatedAt_" and it should be before the updated time "_tResults.LastUpdate)
 }
 
+/// Testcase if LastUser property is not empty after insert and is set to current user.
+Method TestLastUserAfterInsert()
+{
+	set tResults=##class(shvarov.persistent.base).%New()
+	Do tResults.%Save()
+	Do $$$AssertTrue((tResults.LastUser'=""),"LastUser is not empty after insert: "_tResults.LastUser)
+	Do $$$AssertTrue((tResults.LastUser=$Username),"LastUser is not equal to current user: "_tResults.LastUser_" should be "_$Username)
+}
+
 }

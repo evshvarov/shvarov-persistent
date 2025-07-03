@@ -4,6 +4,11 @@ This is a base class that brings two TS properties added to your persistent clas
 Property CreatedAt: %TimeStamp;
 Property LastUpdate: %TimeStamp;
 ```
+And a property that contains the username changed the record last time:
+```ObjectScript
+Property LastUser: %String;
+```
+
 
 
 ## Installation
