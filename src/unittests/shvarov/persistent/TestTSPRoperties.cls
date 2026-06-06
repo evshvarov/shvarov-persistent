@@ -19,7 +19,7 @@ Method TestLastUpdateAfterUpdate()
 	//set tResults
 	set tCreatedAt=tResults.LastUpdate
 	h 1 // wait 1 second to ensure that LastUpdate will be different
-	set tResults.CreatedAt=$ZDT($H-1,3) //set CreatedAt to yesterday
+	set tResults.createdat=$ZDT($H-1,3) //set CreatedAt to yesterday
 	Do tResults.%Save()
 	Do $$$AssertTrue(($SYSTEM.SQL.Functions.DATEDIFF("second",tCreatedAt,tResults.LastUpdate)>0),"LastUpdate is sooner than expected: It was created at "_tCreatedAt_" and it should be before the updated time "_tResults.LastUpdate)
 }
@@ -29,8 +29,8 @@ Method TestLastUserAfterInsert()
 {
 	set tResults=##class(shvarov.persistent.base).%New()
 	Do tResults.%Save()
-	Do $$$AssertTrue((tResults.LastUser'=""),"LastUser is not empty after insert: "_tResults.LastUser)
-	Do $$$AssertTrue((tResults.LastUser=$Username),"LastUser is not equal to current user: "_tResults.LastUser_" should be "_$Username)
+	Do $$$AssertTrue((tResults.lastuser'=""),"LastUser is not empty after insert: "_tResults.lastuser)
+	Do $$$AssertTrue((tResults.lastuser=$Username),"LastUser is not equal to current user: "_tResults.lastuser_" should be "_$Username)
 }
 
 }
